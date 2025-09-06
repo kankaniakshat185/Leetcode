@@ -1,20 +1,23 @@
 # 485. Max Consecutive Ones
 
-**Link:** https://leetcode.com/problems/max-consecutive-ones/submissions/1758043287/
+**Link:** https://leetcode.com/problems/max-consecutive-ones/submissions/1761356301/
 
 Given a binary array nums, return the maximum number of consecutive 1's in the array.
 
 ```cpp
-            count=0;
+        for(i=0;i<n;i++){
+            if(nums[i]==1) {
         }
-                count++;
-                i++;
-            }
             maxCount=max(count,maxCount);
-            while(i<nums.size() && nums[i]!=0) {
-            while(i<nums.size() && nums[i]!=1) i++;
-        while(i<nums.size()){
-        return maxCount;
+            count++;
+        }   
+            else {
+                count=0;
+    }
+    return maxCount;
     }
 };
+        int count=0,i,maxCount=0;
+        int n=nums.size();
+    int findMaxConsecutiveOnes(vector<int>& nums) {
 ```
