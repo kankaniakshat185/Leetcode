@@ -1,6 +1,6 @@
 # 53. Maximum Subarray
 
-**Link:** https://leetcode.com/problems/maximum-subarray/submissions/1763879321/
+**Link:** https://leetcode.com/problems/maximum-subarray/
 
 Given an integer array nums, find the subarray with the largest sum, and return its sum.
 
