@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/balanced-binary-tree/submissions/2008323159/
+- **URL:** https://leetcode.com/problems/balanced-binary-tree/submissions/2008333194/
 - **Date:** 2026-05-20
 
 ## Solution
@@ -23,18 +23,18 @@
 class Solution {
 public:
     int height(TreeNode* root){
-        if(root==nullptr) return 0;
+        if (root==nullptr) return 0;
 
         int lh=height(root->left);
         int rh=height(root->right);
+        if(lh==-1 || rh==-1) return -1;
+        if(abs(lh-rh)>1) return -1;
 
         return 1+max(lh,rh);
     }
     bool isBalanced(TreeNode* root){
-        if(root==nullptr) return true;
-
-        if(abs(height(root->left)-height(root->right))<=1 && isBalanced(root->left) && isBalanced(root->right)) return true;
-        return false;
+        if(height(root)==-1) return false;
+        return true;
     }
 };
 ```
