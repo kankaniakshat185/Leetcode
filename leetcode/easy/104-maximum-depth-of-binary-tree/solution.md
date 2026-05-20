@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Easy
-- **URL:** https://leetcode.com/problems/maximum-depth-of-binary-tree/submissions/2008309561/
+- **URL:** https://leetcode.com/problems/maximum-depth-of-binary-tree/
 - **Date:** 2026-05-20
 
 ## Solution
@@ -23,11 +23,27 @@
 class Solution {
 public:
     int maxDepth(TreeNode* root) {
-       if (root==nullptr) return 0;
+        queue<TreeNode*> q;
+        vector<vector<int>> ans;
+        int finalAns=0;
+        if(root==nullptr) return 0;
+        q.push(root);
 
-       int lh=maxDepth(root->left);
-       int rh=maxDepth(root->right);
-       return 1+max(lh,rh);
+        while(!q.empty()){
+            int n=q.size();
+            vector<int> level;
+
+            for(int i=0;i<n;i++){
+                TreeNode* node=q.front();
+                q.pop();
+                
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
+                level.push_back(node->val);
+            }
+            finalAns++;
+        }
+        return finalAns;
     }
 };
 ```
