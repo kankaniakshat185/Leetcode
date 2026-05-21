@@ -9,7 +9,7 @@
 ## Solution
 
 ```cpp
-    bool isLeaf(Node* root){
+        if(root==nullptr) return;
 
 
 ```
