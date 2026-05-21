@@ -9,9 +9,6 @@
 ## Solution
 
 ```cpp
-            ans.push_back(root->data);
-            return;
-        }
         if(root->left) leafs(root->left, ans);
         if(root->right) leafs(root->right, ans);
     }
@@ -26,10 +23,12 @@
         }
     }
     vector<int> boundaryTraversal(Node *root) {
+        if(root==nullptr) return {};
         vector<int> ans;
         stack<int> st;
-        ans.push_back(root->data);
-        leftBoundary(root, ans);
+        if(!isLeaf(root))
+    ans.push_back(root->data);
+        leftBoundary(root->left, ans);
         leafs(root, ans);
         rightBoundary(root, st);
         while(!st.empty()){
