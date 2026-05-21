@@ -9,16 +9,17 @@
 ## Solution
 
 ```cpp
+        }
         if(root->left) leafs(root->left, ans);
         if(root->right) leafs(root->right, ans);
     }
     void rightBoundary(Node* root, stack<int> &st){
-            if(root->right && !isLeaf(root->right)) {
-            st.push(root->right->data);
+            if(!isLeaf(root)) {
+            st.push(root->data);
             rightBoundary(root->right, st);
         }
-        else if(root->left && !isLeaf(root->left)) {
-            st.push(root->left->data);
+        else if(!isLeaf(root)) {
+            st.push(root->data);
             rightBoundary(root->left, st);
         }
     }
@@ -30,7 +31,7 @@
     ans.push_back(root->data);
         leftBoundary(root->left, ans);
         leafs(root, ans);
-        rightBoundary(root, st);
+        rightBoundary(root->right, st);
         while(!st.empty()){
             ans.push_back(st.top());
             st.pop();
