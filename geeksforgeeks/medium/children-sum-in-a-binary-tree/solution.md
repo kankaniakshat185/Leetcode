@@ -9,7 +9,7 @@
 ## Solution
 
 ```cpp
-        int right = root->right ? root->right->data : 0;
+        int right = root->right!=nullptr ? root->right->data : 0;
 
 
 ```
