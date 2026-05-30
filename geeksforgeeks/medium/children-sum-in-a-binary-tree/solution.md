@@ -9,7 +9,7 @@
 ## Solution
 
 ```cpp
-        if(root->data==left+right && isSumProperty(root->left) && isSumProperty(root->right)) return true;
+        int right = root->right ? root->right->data : 0;
 
 
 ```
