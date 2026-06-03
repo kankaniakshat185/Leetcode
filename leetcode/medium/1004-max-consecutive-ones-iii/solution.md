@@ -3,7 +3,7 @@
 ## Problem Information
 - **Platform:** Leetcode
 - **Difficulty:** Medium
-- **URL:** https://leetcode.com/problems/max-consecutive-ones-iii/submissions/1854394869/
+- **URL:** https://leetcode.com/problems/max-consecutive-ones-iii/description/
 - **Date:** 2026-06-03
 
 ## Solution
@@ -25,6 +25,7 @@ public:
                     l++;
                     zeros--;
                 }
+                maxlen = max(maxlen, r-l+1);
                 r++;
             }
         }
