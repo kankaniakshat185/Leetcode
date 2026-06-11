@@ -4,12 +4,12 @@
 - **Platform:** Geeksforgeeks
 - **Difficulty:** Medium
 - **URL:** https://www.geeksforgeeks.org/problems/merge-k-sorted-arrays/1
-- **Date:** 2026-06-10
+- **Date:** 2026-06-11
 
 ## Solution
 
 ```cpp
-        return ans;
+                pq.push({mat[x][y+1],{x, y+1}});
 
 
 ```
