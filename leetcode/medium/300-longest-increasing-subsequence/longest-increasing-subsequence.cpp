@@ -11,8 +11,16 @@ public:
         return dp[idx][prev+1]=max(pick, notpick);
     }
     int lengthOfLIS(vector<int>& nums) {
-        int n=nums.size();
-        vector<vector<int>> dp(n+1, vector<int> (n+2, -1));
-        return solve(nums, 0, -1, n, dp);
+        int n=nums.size(), previ=-1;
+        vector<vector<int>> dp(n+1, vector<int> (n+1, 0));
+        for(int i=n-1;i>=0;i--){
+            for(int previdx=i-1;previdx>=-1;previdx--){
+                int pick=0;
+                if(previdx==-1 || nums[i]>nums[previdx]) pick=1+dp[i+1][i+1];
+                int notpick=dp[i+1][previdx+1];
+                dp[i][previdx+1]=max(pick, notpick);
+            }
+        }
+        return dp[0][0];
     }
 };
