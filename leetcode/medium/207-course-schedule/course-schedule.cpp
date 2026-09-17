@@ -5,8 +5,8 @@ public:
         vector<vector<int>> adjList(numCourses);
         vector<int> indeg(numCourses);
         for(int i=0;i<n;i++){
-            adjList[prerequisites[i][0]].push_back(prerequisites[i][1]);
-            indeg[prerequisites[i][1]]++;
+            adjList[prerequisites[i][1]].push_back(prerequisites[i][0]);
+            indeg[prerequisites[i][0]]++;
         }
         queue<int> q;
         int count=0;
